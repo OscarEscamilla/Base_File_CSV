@@ -52,11 +52,11 @@ public class ControllerBase {
         //ArrayList<ModelBase> contactos = new ArrayList();//nuevas lineas
         try {
             File file = new File(modelbase.getPath());
-            FileWriter filewriter = new FileWriter(file, false);
+            FileWriter filewriter = new FileWriter(file, true);
             StringBuilder contenido = new StringBuilder();
             try(PrintWriter printwriter = new PrintWriter(filewriter)){
                 contenido.append(viewbase.jtf_nombre.getText()+ ","+ viewbase.jtf_correo.getText());
-                contenido.append("\n");
+                //contenido.append("\n");
                 printwriter.println(contenido);  
                 JOptionPane.showMessageDialog(null,"Datos Guardados...");
             }
